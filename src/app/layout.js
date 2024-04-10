@@ -1,3 +1,7 @@
+import { WalletConnectProvider } from '../components/WalletConnectProvider'
+//import '../styles/global.css'
+import '@solana/wallet-adapter-react-ui/styles.css'
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -11,7 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WalletConnectProvider>
+        {children}
+        </WalletConnectProvider>
+        </body>
     </html>
   );
 }
