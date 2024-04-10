@@ -1,3 +1,4 @@
+"use client";
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { useTodo } from '../hooks/todo'
 import Loading from '../components/Loading'
