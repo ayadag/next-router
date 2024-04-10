@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 //import { useSearchParams } from "next/navigation";
 
@@ -8,7 +8,7 @@ import { useParams } from "next/navigation";
 //import styles from '../styles/Contact.module.css'
 
 import React, { useEffect, useCallback, useContext } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 //import { MeetContext } from "../context/MeetContext";
 //import { Outlet, useParams } from "react-router-dom";
 
@@ -26,7 +26,9 @@ const Meeting = ({ match }) => {
   const domain = "meet.jit.si";
   let api = {};
 
-  const history = useHistory();
+//   const history = useHistory();
+
+  const router = useRouter();
 
   // THIS IS TO EXTRACT THE NAME WHICH WAS FILLED IN THE FIRST PAGE
   //const [name] = useContext(MeetContext);
@@ -94,7 +96,8 @@ const Meeting = ({ match }) => {
 
   const handleVideoConferenceLeft = () => {
     console.log("handleVideoConferenceLeft");
-    history.push("/meet");
+    // history.push("/meet");
+    router.push('/meet');
   };
 
   // GETTING ALL PARTICIPANTS
