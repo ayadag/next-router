@@ -1,4 +1,7 @@
 "use client";
+
+import { useParams } from "next/navigation";
+
 //import { useSearchParams } from "next/navigation";
 
 //import React from "react";
@@ -10,6 +13,9 @@ import React, { useEffect, useCallback, useContext } from "react";
 //import { Outlet, useParams } from "react-router-dom";
 
 const Meeting = ({ match }) => {
+
+  const params = useParams();
+  const roomn = params.key;
 
   //get the room name from the Url parameters.
   // const [searchParams, setSearchParams] = useParams();
@@ -31,8 +37,9 @@ const Meeting = ({ match }) => {
   const startMeet = useCallback(() => {
     const options = {
       //roomName: match.params.id,
-      roomName: "room96",
+      //roomName: "room96",
       //roomName: RoomN,
+      roomName: roomn,
       width: "100vw",
       height: "100vh",
       configOverwrite: { prejoinPageEnabled: false },
